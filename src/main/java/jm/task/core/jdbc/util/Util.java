@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Util {
     // реализуйте настройку соеденения с БД
-    private static final String url = "jdbc:mysql://localhost:3306/mysql";
+    private static final String url = "jdbc:mysql://localhost:3306/userdb";
     private static final String name = "root";
     private static final String password = "root";
     private static Connection con;
