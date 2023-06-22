@@ -8,6 +8,9 @@ public class Main {
         // реализуйте алгоритм здесь
         UserService userService = new UserServiceImpl();
 
+        // just first commit
+        userService.dropUsersTable();
+
         // создание таблицы 'User'
         userService.createUsersTable();
 
@@ -24,7 +27,7 @@ public class Main {
         userService.cleanUsersTable();
 
         // drop table
-        userService.dropUsersTable();
+        
 
 
     }
