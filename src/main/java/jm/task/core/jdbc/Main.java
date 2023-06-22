@@ -7,15 +7,6 @@ public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
         UserService userService = new UserServiceImpl();
-        String name;
-        String lastName;
-        byte age;
-
-        // создание таблицы 'User'
-        // добавление 4 'user'ов в таблицу 'User', после каждого добавления должен быть вывод в консоль
-        // show all users
-        // clear table
-        // drop table
 
         // создание таблицы 'User'
         userService.createUsersTable();
@@ -29,7 +20,7 @@ public class Main {
         // show all users and output through console
         userService.getAllUsers();
 
-        // clear table
+        // clean table
         userService.cleanUsersTable();
 
         // drop table

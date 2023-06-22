@@ -3,15 +3,17 @@ package jm.task.core.jdbc.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GenericGenerator(name = "generator", strategy = "increment")
+    @GeneratedValue(generator = "generator")
     @Column(name = "id")
     private Long id;
 
@@ -27,19 +29,16 @@ public class User {
     public User() {
 
     }
-
-    public User(String name, String lastName, Byte age) {
+    public User(Long id, String name, String lastName, Byte age) {
+        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.age = age;
     }
 
+
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

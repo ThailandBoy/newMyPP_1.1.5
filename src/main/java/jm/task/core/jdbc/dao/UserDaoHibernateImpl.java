@@ -17,11 +17,11 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public void createUsersTable() {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            //session.            
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
+        // try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        //     //session.            
+        // } catch (Exception e) {
+        //     // TODO: handle exception
+        // }
     }
 
     @Override
@@ -29,17 +29,17 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public void saveUser(String name, String lastName, byte age) {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            // start a transaction
-            transaction = session.beginTransaction();
-            // save the user object
-            User user = new User(name, lastName, age);
-            session.save(user);
-            // commit transaction
-            transaction.commit();
-        } catch (HibernateException e) {
-            e.printStackTrace();
-        }
+        // try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        //     // start a transaction
+        //     transaction = session.beginTransaction();
+        //     // save the user object
+        //     User user = new User(name, lastName, age);
+        //     session.save(user);
+        //     // commit transaction
+        //     transaction.commit();
+        // } catch (HibernateException e) {
+        //     e.printStackTrace();
+        // }
     }
 
     @Override
@@ -47,11 +47,11 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("from User", User.class).list();           
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
+        // try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        //     return session.createQuery("from User", User.class).list();           
+        // } catch (Exception e) {
+        //     // TODO: handle exception
+        // }
         return null;
     }
 
