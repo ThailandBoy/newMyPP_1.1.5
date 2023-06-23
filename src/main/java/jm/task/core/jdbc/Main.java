@@ -7,11 +7,8 @@ public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
         UserService userService = new UserServiceImpl();
-
-        // just first commit
-        userService.dropUsersTable();
-
-        // создание таблицы 'User'
+        
+        //создание таблицы 'User'
         userService.createUsersTable();
 
         // добавление 4 'user'ов в таблицу 'User', после каждого добавления должен быть вывод в консоль
@@ -22,9 +19,13 @@ public class Main {
 
         // show all users and output through console
         userService.getAllUsers();
+        userService.removeUserById(3l);
 
         // clean table
         userService.cleanUsersTable();
+
+        // just first commit
+        userService.dropUsersTable();
 
         // drop table
         

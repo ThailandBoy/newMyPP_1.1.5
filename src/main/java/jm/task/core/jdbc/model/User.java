@@ -8,6 +8,9 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+
+// ДЛЯ HIBERNATE НАЗВАНИЕ ПОЛЕЙ И НАЗВАНИЯ СТОЛБЦОВ ДОЛЖНЫ БЫТЬ ОДИНАКОВЫ
+
 @Entity
 @Table(name = "user")
 public class User {
@@ -20,7 +23,7 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "last_name")
+    @Column(name = "lastName")
     private String lastName;
 
     @Column(name = "age")
@@ -28,6 +31,11 @@ public class User {
 
     public User() {
 
+    }
+    public User( String name, String lastName, Byte age) {
+        this.name = name;
+        this.lastName = lastName;
+        this.age = age;
     }
     public User(Long id, String name, String lastName, Byte age) {
         this.id = id;
@@ -39,6 +47,9 @@ public class User {
 
     public Long getId() {
         return id;
+    }
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
