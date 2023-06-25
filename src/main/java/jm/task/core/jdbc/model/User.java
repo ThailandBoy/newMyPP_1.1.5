@@ -9,8 +9,6 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 
-// ДЛЯ HIBERNATE НАЗВАНИЕ ПОЛЕЙ И НАЗВАНИЯ СТОЛБЦОВ ДОЛЖНЫ БЫТЬ ОДИНАКОВЫ
-
 @Entity
 @Table(name = "user")
 public class User {
@@ -23,8 +21,8 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "lastName")
-    private String lastName;
+    @Column(name = "last_name")
+    private String last_name;
 
     @Column(name = "age")
     private Byte age;
@@ -32,22 +30,24 @@ public class User {
     public User() {
 
     }
-    public User( String name, String lastName, Byte age) {
+
+    public User(String name, String last_name, Byte age) {
         this.name = name;
-        this.lastName = lastName;
-        this.age = age;
-    }
-    public User(Long id, String name, String lastName, Byte age) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
+        this.last_name = last_name;
         this.age = age;
     }
 
+    public User(Long id, String name, String last_name, Byte age) {
+        this.id = id;
+        this.name = name;
+        this.last_name = last_name;
+        this.age = age;
+    }
 
     public Long getId() {
         return id;
     }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -60,12 +60,12 @@ public class User {
         this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
     public Byte getAge() {
@@ -81,7 +81,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", lastName='" + last_name + '\'' +
                 ", age=" + age +
                 '}';
     }
